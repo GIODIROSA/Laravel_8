@@ -22,5 +22,25 @@ Route::get('/autos', function () {
     return 'hola autos';
 });
 
+// Route::get('/hola/{nombre}', function ($nombre) {
+//     return "hola: $nombre";
+// });
+
+Route::get('/chao/{nombre?}', function ($nombre = "marco") {
+    return "chao: $nombre";
+});
+
+
+Route::get('/hola/{nombre?}', function ($nombre = "marco") {
+    return "hola: $nombre conocenos: <a href='".route("nosotros")."'>nosotros</a>";
+});
+
+Route::get('/sobre-nosotros-en-la-web', function () {
+    return "<h1>Toda la información sobre nosotros!</h1>";
+})->name("nosotros");
+
+
+
+
 
 //Route::resource('financiamiento', 'PostController::class');
