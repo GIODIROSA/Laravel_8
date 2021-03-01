@@ -39,8 +39,10 @@ Route::get('/sobre-nosotros-en-la-web', function () {
     return "<h1>Toda la información sobre nosotros!</h1>";
 })->name("nosotros");
 
+Route::get('financiamiento/{nombre?}/{apellido?}', function ($nombre= "marco", $apellido= "molina") {
+    //eturn view('financiamiento')->with("nombre", $nombre)->with("apellido", $apellido);
+    return view('financiamiento', ['nombre' => $nombre, 'apellido' => $apellido]);
+
+})->name("financiamiento");
 
 
-
-
-//Route::resource('financiamiento', 'PostController::class');
