@@ -40,8 +40,14 @@ Route::get('/sobre-nosotros-en-la-web', function () {
 })->name("nosotros");
 
 Route::get('financiamiento/{nombre?}/{apellido?}', function ($nombre= "marco", $apellido= "molina") {
+
+$posts= ['Post1', 'Post2', 'Post3', 'Post4' ];
+
+$nombres= ['valentina', 'raul', 'oriana', 'barbie' ];
+
+
     //eturn view('financiamiento')->with("nombre", $nombre)->with("apellido", $apellido);
-    return view('financiamiento', ['nombre' => $nombre, 'apellido' => $apellido]);
+    return view('financiamiento', ['nombre' => $nombre, 'apellido' => $apellido, 'posts' => $posts, 'nombres' => $nombres]);
 
 })->name("financiamiento");
 
