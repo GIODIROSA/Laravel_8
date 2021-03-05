@@ -20,10 +20,39 @@
     @endforeach
 
 </ul>
+
+
+@isset($nombres)
+   isset
+@endisset
+
+@empty($nombres)
+  empty
+@endempty
    
 <ul>
 @forelse ($nombres as $nombre)
-    <li>{{ $nombre }}</li>
+
+
+
+
+    <li>
+
+        
+@if ($loop-> first)
+Primero:
+    
+
+
+@elseif ($loop-> last)
+Último:
+
+@else
+Medio:
+    
+@endif
+        
+        {{ $nombre }}</li>
 @empty
     <p>No hay nombres</p>
 @endforelse

@@ -44,9 +44,7 @@ Route::get('financiamiento/{nombre?}/{apellido?}', function ($nombre= "marco", $
 $posts= ['Post1', 'Post2', 'Post3', 'Post4' ];
 
 $nombres= ['valentina', 'raul', 'oriana', 'barbie' ];
-
-
-    //eturn view('financiamiento')->with("nombre", $nombre)->with("apellido", $apellido);
+    //return view('financiamiento')->with("nombre", $nombre)->with("apellido", $apellido);
     return view('financiamiento', ['nombre' => $nombre, 'apellido' => $apellido, 'posts' => $posts, 'nombres' => $nombres]);
 
 })->name("financiamiento");
